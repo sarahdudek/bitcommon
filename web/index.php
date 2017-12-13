@@ -16,11 +16,11 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 	'twig.path' => __DIR__.'/views',
 	));
 
+	$api = new CoingeckoApi();
+	$timestamp = $api->shared()->getExchangeRates(true);
 // Our web handlers
 
 $app->get('/', function() use($app) {
-	$api = new CoingeckoApi();
-	$timestamp = $api->shared()->getExchangeRates(true);
 	$app['monolog']->addDebug('logging output.');
 	return $app['twig']->render('index.twig', array("timestamp" => $timestamp));
 });
