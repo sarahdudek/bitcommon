@@ -1,6 +1,5 @@
 <?php
 
-composer require madmis/coingecko-api 1.0.*
 require('../vendor/autoload.php');
 
 $app = new Silex\Application();
