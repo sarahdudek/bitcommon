@@ -1,10 +1,7 @@
 <?php
 
 require('../vendor/autoload.php');
-
-use madmis\CoingeckoApi\CoingeckoApi;
-
-$api = new CoingeckoApi();
+require('../main.php');
 
 $app = new Silex\Application();
 $app['debug'] = true;
@@ -22,7 +19,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 // Our web handlers
 $app->get('/', function() use($app) {
 	$app['monolog']->addDebug('logging output.');
-	return $app['twig']->render('index.twig', array("timestamp" => ' a literal string'));
+	return $app['twig']->render('index.twig', array("timestamp" => $timestamp));
 });
 
 $app->run();
