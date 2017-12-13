@@ -1,9 +1,7 @@
 <?php
 
 require('../vendor/autoload.php');
-// require_once('../main.php');
-use CoingeckoApi;
-
+include('../main.php');
 
 $app = new Silex\Application();
 $app['debug'] = true;
@@ -18,10 +16,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 	'twig.path' => __DIR__.'/views',
 	));
 
-	$api = new CoingeckoApi();
-	$timestamp = $api->shared()->getExchangeRates(true);
 // Our web handlers
-
 $app->get('/', function() use($app) {
 	$app['monolog']->addDebug('logging output.');
 	return $app['twig']->render('index.twig', array("timestamp" => $timestamp));
