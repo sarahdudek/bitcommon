@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'madmis\\' => array($vendorDir . '/madmis/exchange-api/src', $vendorDir . '/madmis/coingecko-api/src'),
+    'Twig\\' => array($vendorDir . '/twig/twig/src'),
     'Test\\' => array($vendorDir . '/madmis/exchange-api/tests', $vendorDir . '/madmis/coingecko-api/tests'),
     'Symfony\\Polyfill\\Php70\\' => array($vendorDir . '/symfony/polyfill-php70'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
@@ -23,6 +24,7 @@ return array(
     'Silex\\' => array($vendorDir . '/silex/silex/src/Silex'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
+    'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),
     'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),

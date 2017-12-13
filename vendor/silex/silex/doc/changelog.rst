@@ -1,6 +1,27 @@
 Changelog
 =========
 
+2.2.0 (2017-07-23)
+------------------
+
+* added json manifest version strategy support
+* fixed EsiFragment constructor
+* fixed RedirectableUrlMatcher compatibility with Symfony
+* fixed compatibility with Pimple 3.2
+* fixed WebTestCase compatibility with PHPUnit 6+
+
+2.1.0 (2017-05-03)
+------------------
+
+* added more options to security.firewalls
+* added WebLink component integration
+* added parameters to configure the Twig core extension behavior
+* fixed deprecation notices with symfony/twig-bridge 3.2+ in TwigServiceProvider
+* added FormRegistry as a service to enable the extension point
+* removed the build scripts
+* fixed some deprecation warnings
+* added support for registering Swiftmailer plugins
+
 2.0.4 (2016-11-06)
 ------------------
 

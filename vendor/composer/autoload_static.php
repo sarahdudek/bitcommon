@@ -7,9 +7,9 @@ namespace Composer\Autoload;
 class ComposerStaticInitb0081085258b3478ccf88c9db6458151
 {
     public static $files = array (
-        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '023d27dca8066ef29e6739335ea73bad' => __DIR__ . '/..' . '/symfony/polyfill-php70/bootstrap.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
@@ -22,6 +22,7 @@ class ComposerStaticInitb0081085258b3478ccf88c9db6458151
         ),
         'T' => 
         array (
+            'Twig\\' => 5,
             'Test\\' => 5,
         ),
         'S' => 
@@ -44,6 +45,7 @@ class ComposerStaticInitb0081085258b3478ccf88c9db6458151
         array (
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
+            'Psr\\Container\\' => 14,
         ),
         'M' => 
         array (
@@ -66,6 +68,10 @@ class ComposerStaticInitb0081085258b3478ccf88c9db6458151
         array (
             0 => __DIR__ . '/..' . '/madmis/exchange-api/src',
             1 => __DIR__ . '/..' . '/madmis/coingecko-api/src',
+        ),
+        'Twig\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twig/twig/src',
         ),
         'Test\\' => 
         array (
@@ -131,6 +137,10 @@ class ComposerStaticInitb0081085258b3478ccf88c9db6458151
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
+        'Psr\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/container/src',
         ),
         'Monolog\\' => 
         array (
