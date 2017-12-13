@@ -2,6 +2,7 @@
 
 require('../vendor/autoload.php');
 // require_once('../main.php');
+require('../vendor/madmis/coingecko-api/src/CoingeckoApi/CoingeckoApi.php');
 
 $app = new Silex\Application();
 $app['debug'] = true;
