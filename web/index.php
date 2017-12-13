@@ -20,7 +20,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 
 $app->get('/', function() use($app) {
 	$api = new CoingeckoApi();
-	$timestamp = $api->shared()->getExchangeRates(true));
+	$timestamp = $api->shared()->getExchangeRates(true);
 	$app['monolog']->addDebug('logging output.');
 	return $app['twig']->render('index.twig', array("timestamp" => $timestamp));
 });
