@@ -1,7 +1,9 @@
 <?php
 
 require('../vendor/autoload.php');
-include('../main.php');
+// include('../main.php');
+
+$api = new CoingeckoApi();
 
 $app = new Silex\Application();
 $app['debug'] = true;
