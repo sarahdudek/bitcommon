@@ -1,7 +1,8 @@
 <?php
 
 require('../vendor/autoload.php');
-// include('../main.php');
+
+use madmis\CoingeckoApi\CoingeckoApi;
 
 $api = new CoingeckoApi();
 
