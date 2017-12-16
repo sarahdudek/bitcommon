@@ -10,10 +10,10 @@ $dumpedObj = var_dump($timestamp, true);
 // Number one function:
 	// Function to take that return value, make it pretty
 
-private function printPricePoint($datePriceObject) {
+function printPricePoint($datePriceObject) {
 	foreach ($datePriceObject as $rowOne) {
 		echo $rowOne;
 	}
 } 
 
-printPricePoint($timestamp);
+$dumperino = printPricePoint($timestamp);
