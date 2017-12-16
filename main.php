@@ -4,7 +4,6 @@ use madmis\CoingeckoApi\Api;
 
 $api = new CoingeckoApi();
 $timestamp = $api->shared()->priceCharts(Api::BASE_BCC, Api::QUOTE_USD, Api::PERIOD_24HOURS, false);
-$dumpedObj = var_dump($timestamp, true);
 
 // make a simple object that stores/enumerates through the data
 // Number one function:
@@ -12,7 +11,7 @@ $dumpedObj = var_dump($timestamp, true);
 
 function printPricePoint($datePriceObject) {
 	$array = $datePriceObject[0][0];
-	return $array["stats"];
+	echo $array["stats"];
 } 
 
 $dumperino = printPricePoint($timestamp);
