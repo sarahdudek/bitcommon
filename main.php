@@ -4,7 +4,7 @@ use madmis\CoingeckoApi\Api;
 
 $api = new CoingeckoApi();
 $timestamp = $api->shared()->priceCharts(Api::BASE_BCC, Api::QUOTE_USD, Api::PERIOD_24HOURS, true);
-$dumpedObj = var_export($timestamp, true);
+$dumpedObj = var_dump($timestamp, true);
 
 // make a simple object that stores/enumerates through the data
 // Number one function:
