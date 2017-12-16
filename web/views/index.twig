@@ -2,8 +2,11 @@
 
 {% block content %}
 
-	<p>	Yo </p> <br></br>
-	{% for smalldump in timestamp %}
+	<p>	Yo </p> 
+
+	<br></br>
+
+	{% foreach timestamp as smalldump %}
 		<li> {{smalldump}} </li>
 		<br></br>
 	{% endfor %}
