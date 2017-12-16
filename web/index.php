@@ -19,9 +19,8 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 // Our web handlers
 $app->get('/', function() use($app) {
 	$app['monolog']->addDebug('logging output.');
-	$timestamp = getDateData();
-	$price = getPriceData();
-	return $app['twig']->render('index.twig', array("timestamp" => $timestamp));
+	$data = getData();
+	return $app['twig']->render('index.twig', array("data" => $data));
 });
 
 $app->run();

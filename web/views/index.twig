@@ -4,9 +4,10 @@
 
 	<br></br>
 
-	{% for price in timestamp %}
+	{% for obj in data %}
 		<hr></hr>
-		<p>Price: ${{price}}</p>
+		<p>Date: ${{obj["date"]}}</p>
+		<p>Price: ${{obj["price"]}}</p>
 	{% endfor %}
 
 
