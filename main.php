@@ -2,21 +2,26 @@
 use madmis\CoingeckoApi\CoingeckoApi;
 use madmis\CoingeckoApi\Api;
 
-function getData() {
+function getPriceData() {
 	$api = new CoingeckoApi();
 	$rows = $api->shared()->priceCharts(Api::BASE_BCC, Api::QUOTE_USD, Api::PERIOD_24HOURS, false);
-	$groups = array();
-	foreach ($rows["stats"] as $row) {
-		$date = $row[0];
-		array_push($groups, $date, "\n");
-	}
+	$prices = array();
+
 	foreach ($rows["stats"] as $row) {
 		$price = number_format($row[1], 2, '.', ',');
-		array_push($groups, $price);
+		array_push($prices, $price);
 	}
-	// $keys = array();
-	// foreach ($rows as $key => $value) {
-	// 	array_push($keys, $price);
-	// }
-	return $groups;
+	return $prices;
+} 
+
+function getDateData() {
+	$api = new CoingeckoApi();
+	$rows = $api->shared()->priceCharts(Api::BASE_BCC, Api::QUOTE_USD, Api::PERIOD_24HOURS, false);
+	$dates = array();
+
+	foreach ($rows["stats"] as $row) {
+		$date = $row[0];
+		array_push($dates, $date);
+	}
+	return $dates;
 } 
