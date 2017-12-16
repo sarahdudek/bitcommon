@@ -10,7 +10,7 @@ $timestamp = $api->shared()->priceCharts(Api::BASE_BCC, Api::QUOTE_USD, Api::PER
 	// Function to take that return value, make it pretty
 
 function printPricePoint($datePriceObject) {
-	$array = $datePriceObject[0][0];
+	$array = $datePriceObject[0];
 	var_dump($array["stats"], true);
 } 
 
