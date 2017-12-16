@@ -7,7 +7,7 @@ $timestamp = $api->shared()->priceCharts(Api::BASE_BCC, Api::QUOTE_USD, Api::PER
 
 function printPricePoint($datePriceObject) {
 	$array = $datePriceObject[0];
-	return $array["stats"];
+	return $array;
 } 
 
 $dumperino = printPricePoint($timestamp);
