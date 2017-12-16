@@ -4,12 +4,10 @@
 
 	<br></br>
 
-	{% for smalldump in timestamp["stats"] %}
-		{# <p>Price: {{dump((DateTime) smalldump[0])}}</p> #}
+	{% for price in timestamp %}
 		<hr></hr>
-		<p>Price: ${{number_format(smalldump[0][1], 2, '.', ',')}}</p>
+		<p>Price: ${{price}}</p>
 	{% endfor %}
 
-	{{dump(timestamp)}}
 
 {% endblock %}
