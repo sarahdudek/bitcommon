@@ -2,14 +2,14 @@
 
 {% block content %}
 
-	<p>{{dump(timestamp["stats"])}}</p>
-
 	<br></br>
 
-	{# {% for smalldump in timestamp["stats"] %}
-		<p>Price: {{dump(smalldump[0])}}</p>
-		<br></br>
-		<p>Price: {{dump(smalldump[0])}}</p>
-	{% endfor %} #}
+	{% for smalldump in timestamp["stats"] %}
+		{# <p>Price: {{dump((DateTime) smalldump[0])}}</p> #}
+		<hr></hr>
+		<p>Price: ${{number_format(smalldump[0][1], 2, '.', ',')}}</p>
+	{% endfor %}
+
+	{{dump(timestamp)}}
 
 {% endblock %}
