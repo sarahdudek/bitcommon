@@ -12,12 +12,7 @@ $dumpedObj = var_dump($timestamp, true);
 
 function printPricePoint($datePriceObject) {
 	foreach ($datePriceObject as $rowOne) {
-		foreach ($rowOne as $key => $value) {
-			echo "Key is : " . $key;
-			echo "\n";
-			echo "Value is : " . $value;
-			echo "\n";
-		}
+		echo $rowOne;
 	}
 } 
 

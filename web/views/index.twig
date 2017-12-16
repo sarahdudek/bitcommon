@@ -1,7 +1,11 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<pre> Check this shit out: {{timestamp}} </pre>
+
+	<p>	Yo </p> <br></br>
+	{% for smalldump in timestamp %}
+		<li> {{smalldump}} </li>
+		<br></br>
+	{% endfor %}
+
 {% endblock %}
-
-
