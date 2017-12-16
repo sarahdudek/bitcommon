@@ -2,7 +2,8 @@
 
 {% block content %}
 
-	<p>	{{dump(timestamp["stats"][0])}} </p>
+	<p>	Price: {{dump(timestamp["stats"][0][0])}} </p>
+	<p>	Date: {{dump(timestamp["stats"][0][1])}} </p>
 
 	<br></br>
 
