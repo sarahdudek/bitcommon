@@ -11,9 +11,7 @@ $dumpedObj = var_dump($timestamp, true);
 	// Function to take that return value, make it pretty
 
 function printPricePoint($datePriceObject) {
-	foreach ($datePriceObject as $rowOne) {
-		echo $rowOne;
-	}
+	return array_pop(array_reverse($datePriceObject));
 } 
 
 $dumperino = printPricePoint($timestamp);
