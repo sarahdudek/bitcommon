@@ -17,5 +17,6 @@ function getData($crypto = Api::BASE_BCC, $currency = Api::QUOTE_USD, $period = 
 
 function makeApiCall($crypto = Api::BASE_BCC, $currency = Api::QUOTE_USD, $period = Api::PERIOD_24HOURS, $mapping = false) {
 	$api = new CoingeckoApi();
-	return $api->shared()->priceCharts($crypto, $currency, $period, $mapping)["stats"];
+	$result = $api->shared()->priceCharts($crypto, $currency, $period, $mapping);
+	return $result["stats"];
 }
