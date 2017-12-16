@@ -2,40 +2,19 @@
 use madmis\CoingeckoApi\CoingeckoApi;
 use madmis\CoingeckoApi\Api;
 
-function getData($currency = Api::QUOTE_USD) {
-	$api = new CoingeckoApi();
-	$rows = $api->shared()->priceCharts(Api::BASE_BCC, $currency, Api::PERIOD_24HOURS, false);
+function getData($crypto = Api::BASE_BCC, $currency = Api::QUOTE_USD, $period = Api::PERIOD_24HOURS, $mapping = false) {
+	$stats = makeApiCall($crypto, $currency, $period, $mapping);
 	$data = array();
-
-	foreach ($rows["stats"] as $row) {
+	foreach ($stats as $row) {
 		$obj = array();
-		$obj["date"] = $row[0];
+		$obj["date"] = new DateTime("@$row[0]")->format('Y-m-d H:i:s');
 		$obj["price"] = number_format($row[1], 2, '.', ',');
 		$data[] = $obj;
 	}
 	return $data;
 }
 
-// function getPriceData() {
-// 	$api = new CoingeckoApi();
-// 	$rows = $api->shared()->priceCharts(Api::BASE_BCC, Api::QUOTE_USD, Api::PERIOD_24HOURS, false);
-// 	$prices = array();
-
-// 	foreach ($rows["stats"] as $row) {
-// 		$price = number_format($row[1], 2, '.', ',');
-// 		array_push($prices, $price);
-// 	}
-// 	return $prices;
-// } 
-
-// function getDateData() {
-// 	$api = new CoingeckoApi();
-// 	$rows = $api->shared()->priceCharts(Api::BASE_BCC, Api::QUOTE_USD, Api::PERIOD_24HOURS, false);
-// 	$dates = array();
-
-// 	foreach ($rows["stats"] as $row) {
-// 		$date = $row[0];
-// 		array_push($dates, $date);
-// 	}
-// 	return $dates;
-// } 
+function makeApiCall($crypto = Api::BASE_BCC, $currency = Api::QUOTE_USD, $period = Api::PERIOD_24HOURS, $mapping = false) {
+	$api = new CoingeckoApi();
+	return $api->shared()->priceCharts($crypto, $currency, $period, $mapping)["stats"];
+}
