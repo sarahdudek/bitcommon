@@ -9,7 +9,7 @@ function getData($crypto = Api::BASE_BCC, $currency = Api::QUOTE_USD, $period = 
 		$obj = array();
 		// $dt = new DateTime($row[0]);
 		$obj["date"] = $row[0];//$dt->format('Y-m-d H:i:s');
-		$data['date'] = gmdate('r', $data['date'])
+		$obj['date'] = gmdate('r', $obj['date']);
 		$obj["price"] = number_format($row[1], 2, '.', ',');
 		$obj["type"] = gettype($row[0]);
 		$data[] = $obj;
