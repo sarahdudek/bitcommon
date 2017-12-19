@@ -8,7 +8,7 @@ function getData($crypto = Api::BASE_BCC, $currency = Api::QUOTE_USD, $period = 
 	foreach ($stats as $row) {
 		$obj = array();
 
-		$obj['date'] = date('r', $row[0]);
+		$obj['date'] = date('d/m/Y', $row[0]);
 		$obj["price"] = number_format($row[1], 2, '.', ',');
 		$data[] = $obj;
 	}
