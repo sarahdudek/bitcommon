@@ -21,7 +21,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 // Our web handlers
 $app->get('/', function() use($app) {
 	$app['monolog']->addDebug('logging output.');
-	$data = $repo->getData();
+	// $data = $repo->getData();
 	// $data['date'] = date('r', $data["date"])
 	return $app['twig']->render('index.twig', array("data" => $data));
 });
