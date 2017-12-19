@@ -6,6 +6,8 @@ require('../main.php');
 $app = new Silex\Application();
 $app['debug'] = true;
 
+$repo = new Repository();
+
 // Register the monolog logging service
 $app->register(new Silex\Provider\MonologServiceProvider(), array(
 	'monolog.logfile' => 'php://stderr',
@@ -19,7 +21,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 // Our web handlers
 $app->get('/', function() use($app) {
 	$app['monolog']->addDebug('logging output.');
-	$data = getData();
+	$data = $repo->getData();
 	// $data['date'] = date('r', $data["date"])
 	return $app['twig']->render('index.twig', array("data" => $data));
 });
